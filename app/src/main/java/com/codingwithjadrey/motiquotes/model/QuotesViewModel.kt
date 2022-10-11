@@ -6,7 +6,7 @@ import com.codingwithjadrey.motiquotes.data.MotiveDao
 import kotlinx.coroutines.launch
 
 class QuotesViewModel(private val motiveDao: MotiveDao) : ViewModel() {
-    val allMotiveItems: LiveData<List<Motive>> = motiveDao.getALlMotiveItems().asLiveData()
+    val getAllMotiveItems: LiveData<List<Motive>> = motiveDao.getALlMotiveItems().asLiveData()
 
     private fun insertQuote(motive: Motive) {
         viewModelScope.launch { motiveDao.insert(motive) }
