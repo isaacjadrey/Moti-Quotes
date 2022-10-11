@@ -1,18 +1,18 @@
-# Motiv Shorts
+# Moti Quotes
 
 ### Description : 
- Motiv Shorts is a simple android application that you can use for saving your favourite daily
- motivational quotes. This inspiration came by as I love quoting inspirational and motivational
- quotes
+ Moti Quotes is a simple android application that you can use for saving your favourite daily
+ motivational quotes. This inspiration came by because I love quoting inspirational and motivational
+ quotes.
  
-### Features Of Motiv Shorts :
+### Features Of Moti Quotes :
 ---
 - Create new motivational quote.
 - View Details of the motivational quote.
 - Edit and delete the quote.
 - Share the motivational quote as a message to Email, WhatsApp, Messages or any of your favorite apps
 
-### What To Learn:
+### Take Aways:
 ---
 - Room Library
 - How to create Entity, Dao, and Database classes using the Room library
