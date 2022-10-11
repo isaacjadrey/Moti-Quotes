@@ -1,15 +1,15 @@
-package com.codingwithjadrey.motivationquotes.fragment
+package com.codingwithjadrey.motiquotes.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.codingwithjadrey.motivationquotes.databinding.FragmentAddMotiveBinding
+import com.codingwithjadrey.motiquotes.databinding.FragmentMotiveListBinding
 
-class AddMotiveFragment : Fragment() {
+class MotiveListFragment : Fragment() {
 
-    private var _binding: FragmentAddMotiveBinding? = null
+    private var _binding: FragmentMotiveListBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -17,7 +17,7 @@ class AddMotiveFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        _binding = FragmentAddMotiveBinding.inflate(inflater, container, false)
+        _binding = FragmentMotiveListBinding.inflate(inflater, container, false)
         return binding.root
     }
 
@@ -25,4 +25,5 @@ class AddMotiveFragment : Fragment() {
         super.onDestroyView()
         _binding = null
     }
+
 }

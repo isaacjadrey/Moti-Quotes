@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Motivation Quotes</string>
+    <string name="app_name">Moti Quotes</string>
     <string name="Info_text">Save all your favorite motivational quotes</string>
     <string name="added_on">Added on:</string>
     <string name="date_sample">24, sept 2022</string>
@@ -13,4 +13,5 @@
     <string name="yes">YES</string>
     <string name="share">Share</string>
     <string name="edit">Edit</string>
+    <string name="detail">Detail</string>
 </resources>

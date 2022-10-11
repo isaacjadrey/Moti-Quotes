@@ -1,4 +1,4 @@
-package com.codingwithjadrey.motivationquotes
+package com.codingwithjadrey.motiquotes
 
 import org.junit.Test
 

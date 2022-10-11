@@ -1,4 +1,4 @@
-package com.codingwithjadrey.motivationquotes
+package com.codingwithjadrey.motiquotes
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

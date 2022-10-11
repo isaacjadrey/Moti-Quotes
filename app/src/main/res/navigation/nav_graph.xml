@@ -3,12 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph.xml"
+    android:label="Detail"
     app:startDestination="@id/motiveListFragment">
 
     <fragment
         android:id="@+id/motiveListFragment"
-        android:name="com.codingwithjadrey.motivationquotes.fragment.MotiveListFragment"
-        android:label="fragment_motive_list"
+        android:name="com.codingwithjadrey.motiquotes.fragment.MotiveListFragment"
+        android:label="@string/app_name"
         tools:layout="@layout/fragment_motive_list">
         <action
             android:id="@+id/action_motiveListFragment_to_addMotiveFragment"
@@ -19,8 +20,8 @@
     </fragment>
     <fragment
         android:id="@+id/motiveDetailFragment"
-        android:name="com.codingwithjadrey.motivationquotes.fragment.MotiveDetailFragment"
-        android:label="fragment_motive_detail"
+        android:name="com.codingwithjadrey.motiquotes.fragment.MotiveDetailFragment"
+        android:label="@string/detail"
         tools:layout="@layout/fragment_motive_detail">
         <argument
             android:name="item_id"
@@ -36,8 +37,8 @@
     </fragment>
     <fragment
         android:id="@+id/addMotiveFragment"
-        android:name="com.codingwithjadrey.motivationquotes.fragment.AddMotiveFragment"
-        android:label="fragment_add_motive"
+        android:name="com.codingwithjadrey.motiquotes.fragment.AddMotiveFragment"
+        android:label="{title}"
         tools:layout="@layout/fragment_add_motive">
         <argument
             android:name="title"

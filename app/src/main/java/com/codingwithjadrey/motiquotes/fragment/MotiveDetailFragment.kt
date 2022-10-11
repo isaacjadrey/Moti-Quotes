@@ -1,11 +1,11 @@
-package com.codingwithjadrey.motivationquotes.fragment
+package com.codingwithjadrey.motiquotes.fragment
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.codingwithjadrey.motivationquotes.databinding.FragmentMotiveDetailBinding
+import com.codingwithjadrey.motiquotes.databinding.FragmentMotiveDetailBinding
 
 class MotiveDetailFragment: Fragment() {
 

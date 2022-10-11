@@ -6,11 +6,11 @@ plugins {
 }
 
 android {
-    namespace 'com.codingwithjadrey.motivationquotes'
+    namespace 'com.codingwithjadrey.motiquotes'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.codingwithjadrey.motivationquotes"
+        applicationId "com.codingwithjadrey.motiquotes"
         minSdk 21
         targetSdk 33
         versionCode 1
