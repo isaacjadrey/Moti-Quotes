@@ -22,6 +22,7 @@
 ### Helpful Resources :
 ---
 These resources are a great helpful start in understanding the Room Library
-- [Read and Update Data with Room Library](https://developer.android.com/codelabs/basic-android-kotlin-training-update-data-room#0)
+- [Persisting data with Room](https://developer.android.com/codelabs/basic-android-kotlin-training-persisting-data-room)
+- [Read and Update Data with Room Library](https://developer.android.com/codelabs/basic-android-kotlin-training-update-data-room)
 - [Save data in a local database using Room](https://developer.android.com/training/data-storage/room)
 
