@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/motiveListFragment">
+
+    <fragment
+        android:id="@+id/motiveListFragment"
+        android:name="com.codingwithjadrey.motivationquotes.fragment.MotiveListFragment"
+        android:label="fragment_motive_list"
+        tools:layout="@layout/fragment_motive_list">
+        <action
+            android:id="@+id/action_motiveListFragment_to_addMotiveFragment"
+            app:destination="@id/addMotiveFragment" />
+        <action
+            android:id="@+id/action_motiveListFragment_to_motiveDetailFragment"
+            app:destination="@id/motiveDetailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/motiveDetailFragment"
+        android:name="com.codingwithjadrey.motivationquotes.fragment.MotiveDetailFragment"
+        android:label="fragment_motive_detail"
+        tools:layout="@layout/fragment_motive_detail">
+        <argument
+            android:name="item_id"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_motiveDetailFragment_to_motiveListFragment"
+            app:destination="@id/motiveListFragment"
+            app:popUpTo="@id/motiveListFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_motiveDetailFragment_to_addMotiveFragment"
+            app:destination="@id/addMotiveFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMotiveFragment"
+        android:name="com.codingwithjadrey.motivationquotes.fragment.AddMotiveFragment"
+        android:label="fragment_add_motive"
+        tools:layout="@layout/fragment_add_motive">
+        <argument
+            android:name="title"
+            app:argType="string" />
+        <argument
+            android:name="item_id"
+            android:defaultValue="-1"
+            app:argType="integer" />
+        <action
+            android:id="@+id/action_addMotiveFragment_to_motiveListFragment"
+            app:destination="@id/motiveListFragment"
+            app:popUpTo="@id/motiveListFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
