@@ -5,7 +5,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.codingwithjadrey.motiquotes.databinding.FragmentMotiveListBinding
+
 
 class MotiveListFragment : Fragment() {
 
@@ -19,6 +21,15 @@ class MotiveListFragment : Fragment() {
     ): View? {
         _binding = FragmentMotiveListBinding.inflate(inflater, container, false)
         return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        binding.addMotiveBtn.setOnClickListener {
+            val addMotiveQuote =
+                MotiveListFragmentDirections.actionMotiveListFragmentToAddMotiveFragment("Add Moti Quote")
+            findNavController().navigate(addMotiveQuote)
+        }
     }
 
     override fun onDestroyView() {
