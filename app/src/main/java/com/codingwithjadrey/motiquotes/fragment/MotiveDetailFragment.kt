@@ -92,13 +92,12 @@ class MotiveDetailFragment : Fragment() {
     }
 
     private fun shareQuote() {
-        val intent = Intent(Intent.ACTION_SEND)
-            .setType("text/plain")
-            .putExtra(Intent.EXTRA_SUBJECT, "New Quote")
-            .putExtra(Intent.EXTRA_TEXT, motive.motiveQuote)
-        if (activity?.packageManager?.resolveActivity(intent, 0) != null) {
-            startActivity(intent)
+        val shareIntent: Intent = Intent().apply {
+            action = Intent.ACTION_SEND
+            putExtra(Intent.EXTRA_TEXT, motive.motiveQuote)
+            type = "text/plain"
         }
+        startActivity(Intent.createChooser(shareIntent, "Share Quote"))
     }
 
     override fun onDestroyView() {
