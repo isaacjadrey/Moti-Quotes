@@ -14,4 +14,9 @@
     <string name="share">Share</string>
     <string name="edit">Edit</string>
     <string name="detail">Detail</string>
+    <string name="source">Source</string>
+    <string name="sourceUnknown">unknown</string>
+    <string name="source2">Source:</string>
+    <string name="add_moti_quote">Add Moti Quote</string>
+    <string name="edit_quote">Edit Quote</string>
 </resources>

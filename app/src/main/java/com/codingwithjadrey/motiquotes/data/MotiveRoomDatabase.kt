@@ -5,7 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 
-@Database(entities = [Motive::class], version = 1, exportSchema = false)
+@Database(entities = [Motive::class], version = 2, exportSchema = false)
 abstract class MotiveRoomDatabase : RoomDatabase() {
     abstract fun motiveDao(): MotiveDao
 

@@ -44,12 +44,18 @@ class AddMotiveFragment : Fragment() {
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        /**
+         * the if statement is used when we are updating the quote and sets the
+         * text fields with the quote item we want to edit
+         */
         val quoteId = navigationArgs.itemId
         if (quoteId > 0) {
             quotesViewModel.getQuote(quoteId).observe(this.viewLifecycleOwner) { quoteItem ->
                 motive = quoteItem
                 binding.apply {
                     currentDateTv.setText(motive.createdOn, TextView.BufferType.SPANNABLE)
+                    addSource.setText(motive.quoteSource, TextView.BufferType.SPANNABLE)
                     motivationQuote.setText(motive.motiveQuote, TextView.BufferType.SPANNABLE)
                     saveQuoteBtn.setOnClickListener { updateQuote() }
                 }
@@ -64,31 +70,59 @@ class AddMotiveFragment : Fragment() {
         }
     }
 
+    /**
+     * validates the quote textField and returns a response to the user
+     */
     private fun validateEntry() {
         if (binding.motivationQuote.text.toString().isEmpty()) {
             Toast.makeText(requireContext(), "Please provide a quote", Toast.LENGTH_SHORT).show()
         } else saveNewQuote()
     }
 
+    /**
+     * this adds a new quote in to the database and navigates to quote list fragment
+     * it checks whether the source of the quote is empty and sets the quote source to Unknown
+     * if the quote source is not empty, it sets the source with the text entered
+     */
     private fun saveNewQuote() {
-        quotesViewModel.addQuote(
-            binding.currentDateTv.text.toString(),
-            binding.motivationQuote.text.toString()
-        )
-        val quoteListFragment =
-            AddMotiveFragmentDirections.actionAddMotiveFragmentToMotiveListFragment()
-        findNavController().navigate(quoteListFragment)
+        val sourceUnknown = getString(R.string.sourceUnknown)
+        if (binding.addSource.text.toString().isEmpty()) {
+            quotesViewModel.addQuote(
+                binding.currentDateTv.text.toString(),
+                sourceUnknown,
+                binding.motivationQuote.text.toString()
+            )
+            val quoteListFragment =
+                AddMotiveFragmentDirections.actionAddMotiveFragmentToMotiveListFragment()
+            findNavController().navigate(quoteListFragment)
+        } else {
+            quotesViewModel.addQuote(
+                binding.currentDateTv.text.toString(),
+                binding.addSource.text.toString(),
+                binding.motivationQuote.text.toString()
+            )
+            val quoteListFragment =
+                AddMotiveFragmentDirections.actionAddMotiveFragmentToMotiveListFragment()
+            findNavController().navigate(quoteListFragment)
+        }
     }
 
+    /**
+     * this updates the quote item and navigates back to the quote list fragment
+     */
     private fun updateQuote() {
         quotesViewModel.updateQuoteItem(
             this.navigationArgs.itemId,
             this.binding.currentDateTv.text.toString(),
+            this.binding.addSource.text.toString(),
             this.binding.motivationQuote.text.toString()
         )
         findNavController().navigate(R.id.action_addMotiveFragment_to_motiveListFragment)
     }
 
+    /**
+     * this is called when the fragment gets destroyed
+     */
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

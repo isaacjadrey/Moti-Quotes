@@ -47,6 +47,7 @@ class MotiveDetailFragment : Fragment() {
             motive = quoteItem
             binding.apply {
                 detailMotiveDate.text = motive.createdOn
+                detailSource.text = motive.quoteSource
                 detailMotiveItem.text = motive.motiveQuote
 
                 detailDeleteBtn.setOnClickListener { showConfirmationDialog() }
@@ -55,25 +56,36 @@ class MotiveDetailFragment : Fragment() {
         }
     }
 
+    /**
+     * shows confirmation before user deletes the current item
+     */
     private fun showConfirmationDialog() {
         MaterialAlertDialogBuilder(requireContext())
             .setTitle(R.string.delete)
             .setMessage(R.string.delete_question)
             .setCancelable(false)
-            .setNegativeButton(R.string.no) {_,_ -> }
-            .setPositiveButton(R.string.yes) {_,_ -> deleteQuote() }
+            .setNegativeButton(R.string.no) { _, _ -> }
+            .setPositiveButton(R.string.yes) { _, _ -> deleteQuote() }
             .show()
     }
 
+    /**
+     * Deletes the current  quote item and navigates to the quote list
+      */
     private fun deleteQuote() {
         quotesViewModel.deleteQuote(motive)
         findNavController().navigate(R.id.action_motiveDetailFragment_to_motiveListFragment)
     }
 
+    /**
+     * directs user to add quote fragment with the details of the current quote and
+     * sets the add quote fragment to edit mode for the selected quote item
+     */
     private fun editQuote() {
-        val editDirections = MotiveDetailFragmentDirections.actionMotiveDetailFragmentToAddMotiveFragment(
-            "Edit Quote", motive.id
-        )
+        val editDirections =
+            MotiveDetailFragmentDirections.actionMotiveDetailFragmentToAddMotiveFragment(
+                getString(R.string.edit_quote), motive.id
+            )
         findNavController().navigate(editDirections)
     }
 
@@ -91,6 +103,9 @@ class MotiveDetailFragment : Fragment() {
         }
     }
 
+    /**
+     * function call to share the quote when a user clicks on the share icon
+     */
     private fun shareQuote() {
         val shareIntent: Intent = Intent().apply {
             action = Intent.ACTION_SEND
@@ -100,6 +115,9 @@ class MotiveDetailFragment : Fragment() {
         startActivity(Intent.createChooser(shareIntent, "Share Quote"))
     }
 
+    /**
+     * this is called when the fragment is destroyed
+     */
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

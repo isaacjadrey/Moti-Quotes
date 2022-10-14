@@ -9,6 +9,7 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.codingwithjadrey.motiquotes.MotiQuoteApplication
+import com.codingwithjadrey.motiquotes.R
 import com.codingwithjadrey.motiquotes.adapter.QuoteAdapter
 import com.codingwithjadrey.motiquotes.databinding.FragmentMotiveListBinding
 import com.codingwithjadrey.motiquotes.model.QuotesViewModel
@@ -48,11 +49,14 @@ class MotiveListFragment : Fragment() {
 
         binding.addMotiveBtn.setOnClickListener {
             val addMotiveQuote =
-                MotiveListFragmentDirections.actionMotiveListFragmentToAddMotiveFragment("Add Moti Quote")
+                MotiveListFragmentDirections.actionMotiveListFragmentToAddMotiveFragment(getString(R.string.add_moti_quote))
             findNavController().navigate(addMotiveQuote)
         }
     }
 
+    /**
+     * this is called when the fragment gets destroyed
+     */
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null

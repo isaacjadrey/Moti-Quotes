@@ -16,6 +16,7 @@ class QuoteAdapter(private val onItemClicked: (Motive) -> Unit) :
         fun bind(motive: Motive) {
             binding.apply {
                 dateCreated.text = motive.createdOn
+                quoteSource.text = motive.quoteSource
                 motiveItem.text = motive.motiveQuote
             }
         }

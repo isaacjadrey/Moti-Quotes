@@ -8,5 +8,6 @@ import androidx.room.PrimaryKey
 data class Motive(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     @ColumnInfo(name = "creationDate") val createdOn: String,
+    @ColumnInfo(name = "quoteSource") val quoteSource: String,
     @ColumnInfo(name = "motiveQuote") val motiveQuote: String
 )

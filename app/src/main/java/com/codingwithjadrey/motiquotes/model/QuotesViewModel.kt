@@ -12,12 +12,12 @@ class QuotesViewModel(private val motiveDao: MotiveDao) : ViewModel() {
         viewModelScope.launch { motiveDao.insert(motive) }
     }
 
-    private fun getQuoteItem(creationDate: String, motivationQuote: String): Motive {
-        return Motive(createdOn = creationDate, motiveQuote = motivationQuote)
+    private fun getQuoteItem(creationDate: String, quoteSource: String, motivationQuote: String): Motive {
+        return Motive(createdOn = creationDate, quoteSource = quoteSource, motiveQuote = motivationQuote)
     }
 
-    fun addQuote(creationDate: String, motivationQuote: String) {
-        val quote = getQuoteItem(creationDate, motivationQuote)
+    fun addQuote(creationDate: String, quoteSource: String, motivationQuote: String) {
+        val quote = getQuoteItem(creationDate, quoteSource, motivationQuote)
         insertQuote(quote)
     }
 
@@ -36,17 +36,19 @@ class QuotesViewModel(private val motiveDao: MotiveDao) : ViewModel() {
     private fun getUpdatedQuoteItem(
         quoteID: Int,
         creationDate: String,
+        quoteSource: String,
         motivationQuote: String
     ): Motive {
         return Motive(
             id = quoteID,
             createdOn = creationDate,
+            quoteSource = quoteSource,
             motiveQuote = motivationQuote
         )
     }
 
-    fun updateQuoteItem(quoteID: Int, creationDate: String, motivationQuote: String) {
-        val updatedQuote = getUpdatedQuoteItem(quoteID, creationDate, motivationQuote)
+    fun updateQuoteItem(quoteID: Int, creationDate: String, quoteSource: String, motivationQuote: String) {
+        val updatedQuote = getUpdatedQuoteItem(quoteID, creationDate, quoteSource, motivationQuote)
         updateQuote(updatedQuote)
     }
 }
