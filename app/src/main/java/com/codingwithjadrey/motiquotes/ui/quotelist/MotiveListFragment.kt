@@ -1,4 +1,4 @@
-package com.codingwithjadrey.motiquotes.fragment
+package com.codingwithjadrey.motiquotes.ui.quotelist
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,10 +10,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.codingwithjadrey.motiquotes.MotiQuoteApplication
 import com.codingwithjadrey.motiquotes.R
-import com.codingwithjadrey.motiquotes.adapter.QuoteAdapter
+import com.codingwithjadrey.motiquotes.ui.detailqoute.QuoteAdapter
 import com.codingwithjadrey.motiquotes.databinding.FragmentMotiveListBinding
-import com.codingwithjadrey.motiquotes.model.QuotesViewModel
-import com.codingwithjadrey.motiquotes.model.QuotesViewModelFactory
+import com.codingwithjadrey.motiquotes.ui.viewmodel.QuotesViewModel
+import com.codingwithjadrey.motiquotes.ui.viewmodel.QuotesViewModelFactory
 
 
 class MotiveListFragment : Fragment() {

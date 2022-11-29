@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/motiveListFragment"
-        android:name="com.codingwithjadrey.motiquotes.fragment.MotiveListFragment"
+        android:name="com.codingwithjadrey.motiquotes.ui.quotelist.MotiveListFragment"
         android:label="@string/app_name"
         tools:layout="@layout/fragment_motive_list">
         <action
@@ -20,7 +20,7 @@
     </fragment>
     <fragment
         android:id="@+id/motiveDetailFragment"
-        android:name="com.codingwithjadrey.motiquotes.fragment.MotiveDetailFragment"
+        android:name="com.codingwithjadrey.motiquotes.ui.detailqoute.MotiveDetailFragment"
         android:label="@string/detail"
         tools:layout="@layout/fragment_motive_detail">
         <argument
@@ -37,7 +37,7 @@
     </fragment>
     <fragment
         android:id="@+id/addMotiveFragment"
-        android:name="com.codingwithjadrey.motiquotes.fragment.AddMotiveFragment"
+        android:name="com.codingwithjadrey.motiquotes.ui.addquote.AddMotiveFragment"
         android:label="{title}"
         tools:layout="@layout/fragment_add_motive">
         <argument

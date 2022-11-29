@@ -1,4 +1,4 @@
-package com.codingwithjadrey.motiquotes.data
+package com.codingwithjadrey.motiquotes.data.dao
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -6,6 +6,7 @@ import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
 import androidx.room.Update
+import com.codingwithjadrey.motiquotes.data.entity.Motive
 import kotlinx.coroutines.flow.Flow
 
 

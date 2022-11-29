@@ -1,8 +1,8 @@
-package com.codingwithjadrey.motiquotes.model
+package com.codingwithjadrey.motiquotes.ui.viewmodel
 
 import androidx.lifecycle.*
-import com.codingwithjadrey.motiquotes.data.Motive
-import com.codingwithjadrey.motiquotes.data.MotiveDao
+import com.codingwithjadrey.motiquotes.data.entity.Motive
+import com.codingwithjadrey.motiquotes.data.dao.MotiveDao
 import kotlinx.coroutines.launch
 
 class QuotesViewModel(private val motiveDao: MotiveDao) : ViewModel() {

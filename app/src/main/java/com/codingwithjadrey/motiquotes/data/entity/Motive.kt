@@ -1,4 +1,4 @@
-package com.codingwithjadrey.motiquotes.data
+package com.codingwithjadrey.motiquotes.data.entity
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

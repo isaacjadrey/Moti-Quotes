@@ -1,4 +1,4 @@
-package com.codingwithjadrey.motiquotes.fragment
+package com.codingwithjadrey.motiquotes.ui.addquote
 
 import android.os.Build
 import android.os.Bundle
@@ -14,10 +14,10 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.codingwithjadrey.motiquotes.MotiQuoteApplication
 import com.codingwithjadrey.motiquotes.R
-import com.codingwithjadrey.motiquotes.data.Motive
+import com.codingwithjadrey.motiquotes.data.entity.Motive
 import com.codingwithjadrey.motiquotes.databinding.FragmentAddMotiveBinding
-import com.codingwithjadrey.motiquotes.model.QuotesViewModel
-import com.codingwithjadrey.motiquotes.model.QuotesViewModelFactory
+import com.codingwithjadrey.motiquotes.ui.viewmodel.QuotesViewModel
+import com.codingwithjadrey.motiquotes.ui.viewmodel.QuotesViewModelFactory
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 import java.time.format.FormatStyle

@@ -1,11 +1,11 @@
-package com.codingwithjadrey.motiquotes.adapter
+package com.codingwithjadrey.motiquotes.ui.detailqoute
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import com.codingwithjadrey.motiquotes.data.Motive
+import com.codingwithjadrey.motiquotes.data.entity.Motive
 import com.codingwithjadrey.motiquotes.databinding.MotiveItemBinding
 
 class QuoteAdapter(private val onItemClicked: (Motive) -> Unit) :

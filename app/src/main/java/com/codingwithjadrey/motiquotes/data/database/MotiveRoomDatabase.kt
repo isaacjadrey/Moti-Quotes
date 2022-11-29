@@ -1,9 +1,11 @@
-package com.codingwithjadrey.motiquotes.data
+package com.codingwithjadrey.motiquotes.data.database
 
 import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import com.codingwithjadrey.motiquotes.data.dao.MotiveDao
+import com.codingwithjadrey.motiquotes.data.entity.Motive
 
 @Database(entities = [Motive::class], version = 2, exportSchema = false)
 abstract class MotiveRoomDatabase : RoomDatabase() {
